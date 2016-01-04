@@ -1,7 +1,7 @@
-import React    from 'react';
+// Bootstrapping module
+import React    from 'react';  
 import ReactDOM from 'react-dom';
+import Router   from 'react-router';  
+import routes   from 'routes';
 
-ReactDOM.render(
-    <h1>ReactJS Base Setup</h1>,
-    document.getElementById('content')
-);
+ReactDOM.render(routes, document.getElementById('content'));
