@@ -11,7 +11,7 @@ module.exports = {
 
   entry: {
     module: path.join(srcPath, 'module.js'),
-    common: ['react', 'react-router', 'alt']
+    common: ['react', 'react-router' ]
   },
 
   resolve: {
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   output: {
-    path: path.join(__dirname, 'tmp'),
+    path: path.join(__dirname, 'www'),
     publicPath: '',
     filename: '[name].js',
     library: ['Example', '[name]'],
