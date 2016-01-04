@@ -1,55 +1,60 @@
 'use strict';
 
-var webpack = require('webpack'),  
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    path = require('path'),
-    srcPath = path.join(__dirname, 'src');
+var webpack           = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path              = require('path');
+var srcPath           = path.join(__dirname, 'src');
 
 module.exports = {  
-  target: 'web',
-  cache: true,
 
-  entry: {
-    module: path.join(srcPath, 'module.js'),
-    common: ['react', 'react-router' ]
-  },
+    target: 'web',
+    cache: true,
 
-  resolve: {
-    root: srcPath,
-    extensions: ['', '.js'],
-    modulesDirectories: ['node_modules', 'src']
-  },
+    entry: {
+        module: path.join(srcPath, 'module.js'),
+        common: ['react', 'react-router' ]
+    },
 
-  output: {
-    path: path.join(__dirname, 'www'),
-    publicPath: '',
-    filename: '[name].js',
-    library: ['Example', '[name]'],
-    pathInfo: true
-  },
+    resolve: {
+        root: srcPath,
+        extensions: ['', '.js'],
+        modulesDirectories: ['node_modules', 'src']
+    },
 
-  module: {
-    loaders: [
-      {
-        test: /\.js?$/, 
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-            presets:['es2015', 'react']
-        }
-      }
-    ]
-  },
+    output: {
+        path       : path.join(__dirname, 'www'),
+        publicPath : '',
+        filename   : '[name].js',
+        library    : ['[name]'],
+        pathInfo   : true
+    },
 
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: 'src/index.html'
-    }),
-    new webpack.NoErrorsPlugin()
-  ],
+    module: {
+        loaders: [
+        {
+            test   : /\.js?$/, 
+            exclude: /node_modules/,
+            loader : 'babel',
+            query: {
+                presets:['es2015', 'react']
+            }
+        },
+        {
+            test  : /\.scss$/, // Only .css files
+            loader: 'style!css!sass' // Run both loaders
+            }
+        ]
+    },
 
-  debug: true,
-  devtool: 'eval-cheap-module-source-map'
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin('common', 'common.js'),
+        new HtmlWebpackPlugin({
+            inject  : true,
+            template: 'src/index.html'
+        }),
+        new webpack.NoErrorsPlugin()
+    ],
+
+    debug: true,
+    devtool: 'eval-cheap-module-source-map'
 };

@@ -1,6 +1,8 @@
 import React from 'react';  
 import {RouteHandler, Link} from 'react-router';
 
+import '../styles/main.scss'
+
 class Main extends React.Component {  
   render() {
     return (
