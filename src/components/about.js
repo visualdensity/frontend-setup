@@ -8,9 +8,6 @@ class About extends React.Component {
             <h1>About Page</h1>
 
             <p>This is about me! Yay!!</p>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-            </ul>
       </div>
     );
   }
