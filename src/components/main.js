@@ -1,17 +1,17 @@
 import React from 'react';  
 import {RouteHandler, Link} from 'react-router';
 
-import '../styles/main.scss'
+import '../styles/stylesheets/main.scss'
 
 class Main extends React.Component {  
   render() {
     return (
-      <div>
+      <div className="container">
             <h1>Welcome to App</h1>
             
-            <ul>
-                <li><Link to="Home">Home</Link></li>
-                <li><Link to="about">About</Link></li>
+            <ul className="list-inline">
+                <li><Link className="btn btn-default" to="Home">Home</Link></li>
+                <li><Link className="btn btn-default" to="about">About</Link></li>
             </ul>
 
             <section>

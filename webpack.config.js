@@ -31,17 +31,21 @@ module.exports = {
 
     module: {
         loaders: [
-        {
-            test   : /\.js?$/, 
-            exclude: /node_modules/,
-            loader : 'babel',
-            query: {
-                presets:['es2015', 'react']
-            }
-        },
-        {
-            test  : /\.scss$/, // Only .css files
-            loader: 'style!css!sass' // Run both loaders
+            {
+                test   : /\.js?$/, 
+                exclude: /node_modules/,
+                loader : 'babel',
+                query: {
+                    presets:['es2015', 'react']
+                }
+            },
+            {
+                test  : /\.scss$/, // Only .css files
+                loader: 'style!css!sass' // Run both loaders
+            },
+            { 
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+                loader: 'url-loader?limit=100000' 
             }
         ]
     },

@@ -1,3 +1,4 @@
+@import "./_bootstrap";
 
 $default-font: Helvetica, Arial, sans-serif;
 $default-font-color-fore: #333333;
@@ -8,14 +9,5 @@ body {
     color : $default-font-color-fore;
     font-family: $default-font;
     background-color: #fff;
-}
-
-a, a:visited, a:hover, a:active {
-    text-decoration: none;
-    color: $default-link-color-fore;
-
-    &:hover {
-        color: $default-link-color-hover;
-    }
 }
 

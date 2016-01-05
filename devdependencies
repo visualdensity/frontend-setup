@@ -4,7 +4,9 @@ babel-preset-es2015
 babel-preset-react
 babel-preset-stage-0
 css-loader
+file-loader
 html-webpack-plugin
 node-sass
 style-loader
+url-loader
 webpack
