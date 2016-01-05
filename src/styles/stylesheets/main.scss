@@ -11,3 +11,16 @@ body {
     background-color: #fff;
 }
 
+#top-container {
+    margin-top: 20px;
+
+    h2 {
+        &#top-heading {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+#main--sub-component {
+    padding: 1em;
+}
