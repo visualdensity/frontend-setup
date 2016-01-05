@@ -1,7 +1,21 @@
-$default-font: Helvetica, Arial, sans-serif;
 
+$default-font: Helvetica, Arial, sans-serif;
+$default-font-color-fore: #333333;
+$default-link-color-fore: #666666;
+$default-link-color-hover: #ff6f69;
 
 body {
-  font-family: $default-font;
-  background-color: #cccccc;
+    color : $default-font-color-fore;
+    font-family: $default-font;
+    background-color: #fff;
 }
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: $default-link-color-fore;
+
+    &:hover {
+        color: $default-link-color-hover;
+    }
+}
+
